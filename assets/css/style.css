@@ -1,0 +1,342 @@
+/* ================ Design System ================ */
+:root {
+  /* Paleta de cores (8 tons) */
+  --color-primaria: #2e7d32;
+  /* verde principal */
+  --color-primaria-clara: #4caf50;
+  /* verde claro */
+  --color-secundaria: #00695c;
+  /* azul petróleo */
+  --color-destaque: #81c784;
+  /* verde suave */
+  --color-destaque-trasparente: #81c784cd;
+  /* verde suave com transparencia*/
+
+  --color-neutra-100: #ffffff;
+  --color-neutra-200: #f5f5f5;
+  --color-neutra-400: #9e9e9e;
+  --color-neutra-700: #424242;
+  --color-neutra-900: #212121;
+
+  /* Tipografia */
+  --font-xs: 0.75rem;
+  --font-sm: 0.875rem;
+  --font-md: 1rem;
+  --font-lg: 1.5rem;
+  --font-xl: 2rem;
+
+  /* Espaçamentos */
+  --space-1: 8px;
+  --space-2: 16px;
+  --space-3: 24px;
+  --space-4: 32px;
+  --space-5: 48px;
+  --space-6: 64px;
+
+  /* Outros */
+  --max-width: 1200px;
+}
+
+/* ============== Reset básico=============== */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: var(--space-6)
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: var(--font-md);
+  background-color: var(--color-neutra-100);
+  color: var(--color-neutra-900);
+  line-height: 1.6;
+}
+
+/* ===================== Navegação ================= */
+
+header {
+  background-color: var(--color-destaque-trasparente);
+  color: var(--color-neutra-100);
+  padding: var(--space-1) 0;
+  /* Padding vertical, alinhado ao container */
+  position: sticky;
+  /* MANTÉM FIXO no topo ao rolar */
+  top: 0;
+  z-index: 1000;
+  /* Garante que fique sobre outros elementos */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  /* Adiciona profundidade */
+  transition: padding 0.3s ease;
+}
+
+.navbar {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 var(--space-3);
+  /* Espaçamento lateral para o conteúdo */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  height: 50px;
+  display: block;
+  /* Remove espaço extra abaixo da imagem */
+  transition: transform 0.3s ease;
+  /* ANIMAÇÃO sutil na logo */
+}
+
+.logo:hover {
+  transform: scale(1.05);
+  /* Efeito de zoom suave */
+}
+
+.nav-list {
+  list-style: none;
+  display: flex;
+  gap: var(--space-1);
+  /* Espaçamento menor entre itens */
+}
+
+.nav-list a {
+  color: var(--color-neutra-100);
+  text-decoration: none;
+  font-weight: bold;
+  padding: var(--space-1) var(--space-2);
+  /* ÁREA DE CLIQUE MAIOR */
+  border-radius: 4px;
+  position: relative;
+  /* Base para o pseudo-elemento */
+  transition: color 0.3s ease;
+}
+
+.nav-list a:hover::after,
+.nav-list a:focus-visible::after {
+  width: 70%;
+  /* Largura do sublinhado animado */
+}
+
+.nav-list a:hover,
+.nav-list a:focus-visible {
+  background-color: var(--color-destaque);
+  color: var(--color-neutra-100);
+  /* Mantém a cor do texto */
+  outline: none;
+}
+
+/* Menu Mobile */
+@media (max-width: 768px) {
+  html {
+    scroll-padding-top: 80px;
+  }
+
+  .logo {
+    width: 100px;
+  }
+
+  /* Ajusta o container principal */
+  .navbar {
+    flex-wrap: wrap;
+    /* Permite que os itens quebrem para a próxima linha */
+    justify-content: center;
+    gap: var(--space-1);
+  }
+
+  /* Ajusta a lista de links para quebrar a linha */
+  .nav-list {
+    display: flex;
+    flex-wrap: wrap;
+    /* Permite que os links quebrem a linha */
+    justify-content: center;
+    width: 100%;
+    /* Ocupa toda a largura para centralizar */
+    gap: var(--space-1);
+  }
+
+  .nav-list a {
+    padding: var(--space-1);
+    /* Diminui um pouco o padding para caber mais links */
+  }
+}
+
+
+/* ============== Seções gerais=================== */
+section {
+  min-height: 100vh;
+  padding: var(--space-5) var(--space-2);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+section h1,
+section h2 {
+  margin-bottom: var(--space-3);
+  font-size: var(--font-xl);
+  color: var(--color-primaria);
+}
+
+section p {
+  max-width: 800px;
+  margin-bottom: var(--space-3);
+}
+
+/* ============= Cards, botões e formulários =================== */
+img {
+  max-width: 80%;
+  height: auto;
+  align-self: center;
+}
+
+article {
+  background-color: var(--color-neutra-200);
+  border-radius: 8px;
+  padding: var(--space-3);
+  margin-top: var(--space-3);
+  max-width: 800px;
+  width: 100%;
+}
+
+article img {
+  max-width: 100%;
+  height: auto;
+  margin-top: var(--space-2);
+  border-radius: 8px;
+}
+
+button,
+.a-botao {
+  background-color: var(--color-secundaria);
+  color: var(--color-neutra-100);
+  padding: var(--space-1) var(--space-2);
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: var(--font-md);
+  transition: background-color 0.3s;
+  text-decoration: none;
+  margin-top: var(--font-lg);
+}
+
+button:hover,
+.a-botao:hover {
+  background-color: var(--color-primaria);
+}
+
+button:disabled,
+.a-botao:disabled {
+  background-color: var(--color-neutra-400);
+  cursor: not-allowed;
+}
+
+.a-botao {
+  font-size: var(--font-lg);
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+  justify-self: center;
+  width: 100%;
+  max-width: 400px;
+}
+
+input,
+select {
+  padding: var(--space-1);
+  border: 1px solid var(--color-neutra-400);
+  border-radius: 4px;
+  font-size: var(--font-md);
+}
+
+input:focus,
+select:focus {
+  outline: 2px solid var(--color-primaria);
+}
+
+/* ==================== home ==================== */
+#section-home {
+  background-image: url(../img/imagemPrincipal.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+#section-home h1 {
+  color: var(--color-neutra-700);
+}
+
+#section-home h3 {
+  color: var(--color-neutra-200);
+}
+
+/* ==================== Projetos e grids ==================== */
+
+#section-projetos {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: var(--space-4);
+}
+
+#section-projetos article {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* ================ Footer ==================== */
+#main-cadastro div {
+  background-image: url(../img/apertoDeMao.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+#main-cadastro form {
+  background-color: var(--color-neutra-200);
+}
+
+#main-cadastro h2{
+  color: var(--color-neutra-900);
+}
+
+/* ================ Footer ==================== */
+
+footer {
+  background-color: var(--color-neutra-900);
+  color: var(--color-neutra-100);
+  text-align: center;
+  padding: var(--space-3);
+}
+
+footer a {
+  color: var(--color-primaria-clara);
+  text-decoration: none;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
+
+/* ======== Responsividade extra ================= */
+
+@media (max-width: 600px) {
+
+  section h1,
+  section h2 {
+    font-size: var(--font-lg);
+  }
+
+  button {
+    width: 100%;
+  }
+}
