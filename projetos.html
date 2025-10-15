@@ -1,0 +1,162 @@
+<!-- Ideias:
+Filtro em JS (ex: botão “mostrar só reflorestamento”).
+-->
+
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projetos - Guardiões do Ar</title>
+    <link rel="stylesheet" href="./assets/css/style.css">
+</head>
+
+<body>
+    <!-- barra de navegação entre as páginas -->
+    <header>
+        <nav class="navbar">
+            <a href="./index.html" class="logo-link">
+                <img src="./assets/img/logo.png"
+                    alt="log da ONG, representa uma folha sendo protegida por uma suave brisa, simbolizando a guarda e o cuidado com o ar e a natureza."
+                    class="logo">
+            </a>
+            <ul class="nav-list">
+                <li><a href="./index.html#section-home">Home</a></li>
+                <li><a href="./index.html#section-sobre">Sobre</a></li>
+                <li><a href="./index.html#section-contato">Contato</a></li>
+                <li><a href="./projetos.html">Projetos</a></li>
+                <li><a href="./projetos.html#section-voluntariar">Voluntariar</a></li>
+                <li><a href="./projetos.html#section-doar">Doar</a></li>
+                <li><a href="./cadastro.html">Cadastro</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="section-projetos">
+            <h1>Lista de Projetos</h1>
+            <!-- Gráfico de barras que sera usado com JS-->
+            <figure>
+                <canvas id="graficoBarras" width="200" height="200">
+                    Seu navegador não suporta o elemento canvas.
+                </canvas>
+                <figcaption>
+                    Gráfico: Impacto social por região.
+                </figcaption>
+            </figure>
+
+            <article>
+                <h3>Presevar áreas de vegetação</h3>
+                <figure>
+                    <img src="./assets/img/PresevarVegetação.png"
+                        alt="Pessoas sorridente trabalha unida para cuidar de uma área verde, em um cenário natural."
+                        loading="lazy">
+                </figure>
+                <button type="button">Saiba mais</button>
+                <div class="saiba-mais PresevarVegetação"></div> <!-- sera usado para adionar as descrições com js -->
+            </article>
+
+            <article>
+                <h3>Criar um viveiro comunitario</h3>
+                <figure>
+                    <img src="./assets/img/viveiroComunitario2.png"
+                        alt="Diversas pessoas de todas as idades colaboram em um animado viveiro de mudas, plantando e cuidando de plantas em vasos."
+                        loading="lazy">
+                </figure>
+                <button type="button">Saiba mais</button>
+                <div class="saiba-mais viveiroComunitario"></div> <!-- sera usado para adionar as descrições com js -->
+            </article>
+
+            <article>
+                <h3>Plantar para o própio consumo</h3>
+                <figure>
+                    <img src="./assets/img/própioConsumo.png"
+                        alt="Uma mulher feliz cultiva sua horta pessoal cheia de vegetais e frutas, com uma placa indicando 'CULTIVO PRÓPRIO'"
+                        loading="lazy">
+                </figure>
+                <button type="button">Saiba mais</button>
+                <div class="saiba-mais própioConsumo"></div> <!-- sera usado para adionar as descrições com js -->
+            </article>
+
+            <article>
+                <h3>Limpar áreas degradadas</h3>
+                <figure>
+                    <img src="./assets/img/LimparAreas.png"
+                        alt="Um grupo de pessoas, incluindo adultos e crianças, colabora para limpar uma paisagem árida e poluída, com a placa 'ÁREA EM RECUPERAÇÃO'."
+                        loading="lazy">
+                </figure>
+                <button type="button">Saiba mais</button>
+                <div class="saiba-mais LimparAreas"></div> <!-- sera usado para adionar as descrições com js -->
+            </article>
+
+            <article>
+                <h3>Mapear locais que possa ter um plantios</h3>
+                <figure>
+                    <img src="./assets/img/mapearPlantios.png"
+                        alt=" Um mapa ilustrado de uma área rural-urbana, indicando com ícones verdes possíveis locais para plantio e cultivo."
+                        loading="lazy">
+                </figure>
+                <button type="button">Saiba mais</button>
+                <div class="saiba-mais mapearPlantios"></div> <!-- sera usado para adionar as descrições com js -->
+            </article>
+        </section>
+
+        <!-- voluntariar -->
+        <section id="section-voluntariar">
+            <h2>Como me voluntariar?</h2>
+            <p>Para se torna voluntario é necessário um cadastro na plataforma,<br>com isso você tera acesso para
+                participar em qualquer projeto da ONG</p>
+            <figure>
+                <img src="./assets/img/apertoDeMao.png"
+                    alt="Ilustração simbólica de um aperto de mão com um planeta terra em cima e uma paisagem atras"
+                    loading="lazy">
+            </figure>
+            <div>
+                <h3>Seja voluntário</h3>
+                <a href="./cadastro.html" class="a-botao">Cadastrar</a>
+            </div>
+        </section>
+
+        <section id="section-doar">
+            <h2>Doe agora e ajude o planeta a ser um lugar melhor</h2>
+            <p>As doações realizadas são para fins da melhora do meio ambiente, por meio de projetos da instituição</p>
+
+            <figure>
+                <img src="./assets/img/cofreNatural.png"
+                    alt="Em uma paisagem natural, uma mão coloca uma moeda em um cofrinho com formato de planta, simbolizando o investimento no meio ambiente.">
+            </figure>
+
+            <!-- area de doação que sera manipulado por js -->
+            <article>
+                <form action="/projetos/doacoes">
+                    <h3 class="h3-doacoes">Doar</h3>
+                    <button type="button">R$5</button>
+                    <button type="button">R$50</button>
+                    <button type="button">R$100</button><br>
+                    <label for="valorDoacaoEscolha">Valor atual / alterar valor</label><br>
+                    <input type="number" name="valorDoacaoEscolha" id="valorDoacaoEscolha"><br>
+                    <button type="button">Desejo doar esse valor</button>
+                    <div class="div-formaDePagamento">
+                        <!-- adicionar metodos de pagamento com js -->
+                    </div>
+                </form>
+            </article>
+        </section>
+
+
+    </main>
+
+    <footer>
+        <p>
+            &copy; 2025 Guardiões do Ar ONG. Desenvolvido por
+            <a href="https://www.linkedin.com/in/gustavo-cruz-4a467b377/" target="_blank"
+                rel="noopener noreferrer">Gustavo Cruz</a>
+            -
+            <a href="https://github.com/GUSTAV0-CRUZ" target="_blank" rel="noopener noreferrer">GitHub</a>
+        </p>
+    </footer>
+
+    <script type="module" src="./assets/js/main.js"></script>
+</body>
+</html>
