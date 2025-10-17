@@ -1,5 +1,5 @@
 import validator from 'https://esm.sh/validator';
-import { validaCpf } from './validaCpf.js';
+import { validaCpf } from './validaCpfModule.js';
 
 export default class Form {
     #inputs = document.querySelectorAll('input');
@@ -82,7 +82,9 @@ export default class Form {
             apagarEl.forEach(el => {
                 el.remove()
             });
-        } 
+            return true
+        }
+        return false
     }
 
     static checaIdade(string) {

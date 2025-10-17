@@ -1,0 +1,75 @@
+import Form from './validaformModule.js';
+
+export function saibaMais() {
+    const usaClass = new SaibaMais();
+    usaClass.formataJson();
+    addEventListener('click', e => {
+        const el = e.target;
+        if(!el.classList.contains('saiba-mais')) return
+        usaClass.inicia(el);
+    });
+
+}
+
+class SaibaMais {
+    constructor() {
+        this.botao;
+        this.conteudos = [];
+    }
+
+    inicia(botao) {
+        this.botao = botao;
+        this.botaoApertado();
+    };
+
+    async formataJson () {
+        try {
+            const json = await fetch('../../assets/data/projetos.json');
+            const jsonFormatado = await json.json()
+            jsonFormatado.projetosVoluntariado.forEach(conteudo => {
+                this.conteudos.push(conteudo);
+            });
+        }catch(e) {
+            new console.error(e);
+        }
+    }
+
+    botaoApertado() {
+        if(this.botao.classList.contains('PresevarVegetação')) return this.exibirConteudo(1)
+        if(this.botao.classList.contains('viveiroComunitario')) return this.exibirConteudo(2)
+        if(this.botao.classList.contains('própioConsumo')) return this.exibirConteudo(3)
+        if(this.botao.classList.contains('LimparAreas')) return this.exibirConteudo(4)
+        if(this.botao.classList.contains('mapearPlantios')) return this.exibirConteudo(5)
+    }
+
+    exibirConteudo(idMensagem) {
+        let checaJaElementos = false;
+        if(this.botao.nextElementSibling) checaJaElementos = true
+        if(Form.removeElementos('.saibaMaisExibido') && checaJaElementos) return
+    
+        const { objetivo, atividades, status } = this.conteudos[idMensagem - 1];
+        this.botao.after(SaibaMais.criaTagA({ endereco: "./projetos.html#section-voluntariar", nome: 'Cadastrar'}));
+        this.botao.after(SaibaMais.criaParagrafo({ msg: `<strong>Objetivo:</strong> <u>${objetivo}</u>`, cor: 'green'}));
+        this.botao.after(SaibaMais.criaParagrafo({ msg: `<strong>Tarefas:</strong> <u>${atividades}</u>`, cor: 'blue'}));
+        this.botao.after(SaibaMais.criaParagrafo({ msg: `<strong>Status:</strong> <u>${status}</u>`, cor: 'red'}));
+    }
+
+    static criaParagrafo({ msg, cor}) {
+        const pargrafo = document.createElement('p');
+        pargrafo.innerHTML = msg;
+        pargrafo.classList.add('saibaMaisExibido');
+        pargrafo.style.color = cor;
+        pargrafo.style.margin = 0;
+        return pargrafo
+    }
+
+    static criaTagA({ endereco, nome}) {
+        const tagA = document.createElement('a');
+        tagA.setAttribute('href', endereco);
+        tagA.classList.add('a-botao');
+        tagA.classList.add('saibaMaisExibido');
+        tagA.innerText = nome;
+        return tagA
+    }
+
+}
