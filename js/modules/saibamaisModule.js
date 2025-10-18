@@ -11,7 +11,7 @@ export function saibaMais() {
 
 }
 
-class SaibaMais {
+export class SaibaMais {
     constructor() {
         this.botao;
         this.conteudos = [];

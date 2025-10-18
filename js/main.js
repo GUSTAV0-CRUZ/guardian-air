@@ -1,6 +1,9 @@
 import Form from "./modules/validaformModule.js";
 import { saibaMais } from "./modules/saibamaisModule.js";
-const formTelefone = new Form(document.querySelector('form'))
+import { eventos } from "./modules/doaocoesModule.js";
 
-formTelefone.inicia();
+const form = new Form(document.querySelector('form'))
+
+form.inicia();
 saibaMais();
+eventos();
