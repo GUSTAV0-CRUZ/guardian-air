@@ -133,42 +133,76 @@ header {
   outline: none;
 }
 
+/* Mostra o botão hambúrguer */
+  .menu-hamburger {
+    display: none;
+    background: none;
+    border: none;
+    color: var(--color-neutra-100);
+    font-size: var(--font-lg);
+    cursor: pointer;
+    margin-left: auto;
+  }
+
 /* Menu Mobile */
 @media (max-width: 768px) {
-  body {
-    height: 25vh; /* não aparece o header */
-  }
-
   html {
-    scroll-padding-top: 10px;
+    scroll-padding-top: 50px;
   }
-
   .logo {
     width: 100px;
   }
 
-  /* Ajusta o container principal */
   .navbar {
-    flex-wrap: wrap;
-    /* Permite que os itens quebrem para a próxima linha */
-    justify-content: center;
-    gap: var(--space-1);
+    flex-wrap: nowrap;
+    align-items: center;
+    gap: 0;
+
+    padding: 0 var(--space-2);
   }
 
-  /* Ajusta a lista de links para quebrar a linha */
+   /* Esconde o menu original do pc */
   .nav-list {
-    display: flex;
-    flex-wrap: wrap;
-    /* Permite que os links quebrem a linha */
-    justify-content: center;
-    width: 100%;
-    /* Ocupa toda a largura para centralizar */
-    gap: var(--space-1);
+    display: none;
   }
 
-  .nav-list a {
+   /* Mostra o botão hambúrguer */
+  .menu-hamburger {
+    display: block;
+    background: none;
+    border: none;
+    color: var(--color-neutra-100);
+    font-size: var(--font-lg);
+    cursor: pointer;
+      /* tamanho do botao */
+    width: var(--font-xl);
+    padding: 0;
+    margin: 0;
+    line-height: 1;
+  }
+
+   /* O Menu ativo quando clicado */
+  .nav-list.active {
+    /* Posição: abaixo do header fixo */
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+
+    background-color: var(--color-destaque);
+    padding: var(--space-2); /* Espaçamento interno */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr; /* 3 colunas */
+    gap: var(--space-1); /* Espaço entre os links */
+  }
+
+   /* Ajusta os links dentro do menu (para o grid) */
+  .nav-list.active a {
     padding: var(--space-1);
-    /* Diminui um pouco o padding para caber mais links */
+    text-align: center; /* Centraliza o texto do link */
+    width: 100%; /* Ocupa toda a célula do grid */
   }
 }
 
@@ -253,6 +287,16 @@ button:disabled,
   font-size: var(--font-lg);
 }
 
+button:focus,
+.a-botao:focus {
+  outline: 2px solid var(--color-primaria-clara);
+}
+
+button:active,
+.a-botao:active {
+  filter: brightness(0.9); /* Escurece levemente ao clicar */
+}
+
 form {
   display: flex;
   flex-direction: column;
@@ -273,6 +317,17 @@ select {
 input:focus,
 select:focus {
   outline: 2px solid var(--color-primaria);
+}
+
+input:invalid,
+select:invalid {
+  border-color: #d32f2f;
+  outline-color: #d32f2f;
+}
+
+input:valid,
+select:valid {
+  border-color: var(--color-primaria);
 }
 
 ul {
@@ -350,7 +405,6 @@ footer a:hover {
 /* ======== Responsividade extra ================= */
 
 @media (max-width: 600px) {
-
   section h1,
   section h2 {
     font-size: var(--font-lg);
@@ -360,3 +414,25 @@ footer a:hover {
     width: 100%;
   }
 }
+
+@media (max-width: 480px) {
+  /* Estilos para celulares bem pequenos */
+  body {
+    font-size: var(--font-sm);
+  }
+}
+
+@media (min-width: 769px) and (max-width: 992px) {
+  /* Estilos para tablets em paisagem */
+  .navbar {
+    padding: 0 var(--space-4); /* Mais espaçamento lateral */
+  }
+}
+
+@media (min-width: 1201px) {
+  /* Estilos para telas grandes */
+  :root {
+    --font-xl: 2.25rem; /* Fonte de título um pouco maior */
+  }
+}
+
