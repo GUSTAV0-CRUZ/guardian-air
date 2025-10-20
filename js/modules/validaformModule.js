@@ -1,5 +1,7 @@
 import validator from 'https://esm.sh/validator';
 import { validaCpf } from './validaCpfModule.js';
+import { Modal } from './modalEalertModule.js';
+const modal = new Modal('Recebido', 'Formulário enviado com sucesso');
 
 export default class Form {
     #inputs = document.querySelectorAll('input');
@@ -9,7 +11,8 @@ export default class Form {
         this.erros = [];
     }
     inicia() {
-        this.capturaEventos()
+        modal.criaModal();
+        this.capturaEventos();
     }
 
     capturaEventos() {
@@ -24,7 +27,8 @@ export default class Form {
             this.camposPreenchidos(this.#inputs);
             if(this.erros.length > 0) return
             this.camposValidados(this.#inputs);
-            if(!this.erros.length > 0) return el.submit();
+            if(!this.erros.length > 0) return modal.ativaModal()
+            // el.submit();
         })
     }
 
