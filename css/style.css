@@ -436,3 +436,79 @@ footer a:hover {
   }
 }
 
+/* Dropdown menu  */
+.nav-list li.dropdown {
+  position: relative;
+}
+
+.nav-list li.dropdown ul {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: var(--color-destaque-trasparente);
+  padding: var(--space-1);
+  border-radius: 4px;
+  list-style: none;
+}
+
+.nav-list li.dropdown:hover ul {
+  display: block;
+}
+
+/*  Alert / Toast / Modal  */
+/* Mensagem temporária no canto (alert/toast) */
+.alert {
+  display: none;
+  position: fixed;
+  top: var(--space-2);
+  right: var(--space-2);
+  background: var(--color-primaria);
+  color: var(--color-neutra-100);
+  padding: var(--space-2);
+  border-radius: 4px;
+  z-index: 2000;
+}
+
+.alert.show {
+  display: block;
+}
+
+/* Fundo escuro do modal */
+.modal-sobreposicao {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.6);
+  justify-content: center;
+  align-items: center;
+  z-index: 3000;
+}
+
+.modal-sobreposicao.show {
+  display: flex;
+}
+
+/* Janela central do modal */
+.modal {
+  background: var(--color-neutra-100);
+  color: var(--color-neutra-900);
+  padding: var(--space-4);
+  border-radius: 8px;
+  max-width: 400px;
+  width: 90%;
+  text-align: center;
+}
+
+/*  Badges / Tags  */
+/* Tag ou selo visual pequeno */
+.badge {
+  display: inline-block;
+  padding: 2px 8px;
+  background-color: var(--color-secundaria);
+  color: var(--color-neutra-100);
+  border-radius: 12px;
+  font-size: var(--font-xs);
+  font-weight: bold;
+  text-transform: uppercase;
+}
