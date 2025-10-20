@@ -194,7 +194,7 @@ header {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr; /* 3 colunas */
+    grid-template-columns: 1fr 1fr 1fr; /* 3 colunas */
     gap: var(--space-1); /* Espaço entre os links */
   }
 
@@ -205,7 +205,6 @@ header {
     width: 100%; /* Ocupa toda a célula do grid */
   }
 }
-
 
 /* ============== Seções gerais=================== */
 section {
@@ -337,7 +336,6 @@ ul {
 .nav-list {
   padding: 0;
 }
-
 
 /* ==================== home ==================== */
 #section-home {
