@@ -12,6 +12,7 @@ export default class Form {
     }
     inicia() {
         modal.criaModal();
+        this.camposFormatados();
         this.capturaEventos();
     }
 
@@ -109,4 +110,37 @@ export default class Form {
 
         return true
     }
+
+    camposFormatados() {
+        this.form.addEventListener('click', e => {
+            if(document.querySelector('#telefone')) {
+                const inputTelefone = document.querySelector('#telefone');
+                if(inputTelefone.value.length === 11) {
+                    const dd = inputTelefone.value.slice(0, 2);
+                    const primeirosDigitos = inputTelefone.value.slice(2, 7);
+                    const UltimosDigitos = inputTelefone.value.slice(7, 11);
+                    inputTelefone.value = `(${dd}) ${primeirosDigitos}-${UltimosDigitos}`;
+                }
+            }
+            if(document.querySelector('#cep')) {
+                const inputCep = document.querySelector('#cep');
+                if(inputCep.value.length === 8) {
+                    const primeirosDigitos = inputCep.value.slice(0, 5);
+                    const UltimosDigitos = inputCep.value.slice(5, 8);
+                    inputCep.value = `${primeirosDigitos}-${UltimosDigitos}`;
+            }
+            }
+            if(document.querySelector('#cpf')) {
+                const inputCpf = document.querySelector('#cpf');
+                if(inputCpf.value.length === 11) {
+                    const primeirosDigitos = inputCpf.value.slice(0, 3);
+                    const doMeioDigitos = inputCpf.value.slice(3, 6);
+                    const UltimosDigitos = inputCpf.value.slice(6, 9);
+                    const doisUltimo = inputCpf.value.slice(9, 11);
+                    inputCpf.value = `${primeirosDigitos}.${doMeioDigitos}.${UltimosDigitos}-${doisUltimo}`;
+                }
+            }
+        });
+    }
+
 }
