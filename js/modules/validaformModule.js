@@ -1,6 +1,8 @@
 import validator from 'https://esm.sh/validator';
 import { validaCpf } from './validaCpfModule.js';
 import { Modal } from './modalEalertModule.js';
+import { spaModule } from './spaModule.js';
+
 const modal = new Modal('Recebido', 'Formulário enviado com sucesso');
 
 export default class Form {
@@ -19,7 +21,7 @@ export default class Form {
     capturaEventos() {
         this.form.addEventListener('submit', e => {
             e.preventDefault();
-            const el = e.target;
+            // const el = e.target;
             
             this.erros = [];
             Form.removeElementos('.msg-erros');
@@ -28,7 +30,10 @@ export default class Form {
             this.camposPreenchidos(this.#inputs);
             if(this.erros.length > 0) return
             this.camposValidados(this.#inputs);
-            if(!this.erros.length > 0) return modal.ativaModal()
+            if(this.erros.length > 0) return
+            
+            if(this.form.id === 'form-cadastro') spaModule('section');
+            modal.ativaModal();
             // el.submit();
         })
     }
@@ -96,15 +101,15 @@ export default class Form {
         const formataStrig = string.replace(/[-]/g, '')
         const dataAtual = new Date();
 
-        const anoAtual = dataAtual.getFullYear();
-        const mesAtual = dataAtual.getMonth() + 1;
-        const diaAtual = dataAtual.getDate();
+        const anoAtual = Number(dataAtual.getFullYear());
+        const mesAtual = Number(dataAtual.getMonth() + 1);
+        const diaAtual = Number(dataAtual.getDate());
 
         const getAno = Number(formataStrig.slice(0, 4));
         const getMes = Number(formataStrig.slice(4, 6));
         const getDia = Number(formataStrig.slice(6, 8));
 
-        if(anoAtual - getAno < 18) return false
+        if(anoAtual - getAno < 18 || getAno < 1885) return false
         if(mesAtual < getMes) return false
         if(diaAtual < getDia) return false
 
