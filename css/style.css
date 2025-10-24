@@ -108,7 +108,7 @@ header {
 }
 
 .nav-list a {
-  color: var(--color-neutra-100);
+  color: var(--color-neutra-900);
   text-decoration: none;
   font-weight: bold;
   padding: var(--space-1) var(--space-2);
@@ -127,10 +127,15 @@ header {
 
 .nav-list a:hover,
 .nav-list a:focus-visible {
-  background-color: var(--color-destaque);
   color: var(--color-neutra-100);
   /* Mantém a cor do texto */
   outline: none;
+}
+.nav-list li:hover,
+.nav-list li:focus-visible,
+.nav-list li ul li:hover,
+.nav-list li ul li:focus-visible {
+  background-color: var(--color-secundaria);
 }
 
 /* Mostra o botão hambúrguer */
@@ -138,7 +143,7 @@ header {
     display: none;
     background: none;
     border: none;
-    color: var(--color-neutra-100);
+    color: var(--color-neutra-900);
     font-size: var(--font-lg);
     cursor: pointer;
     margin-left: auto;
@@ -171,7 +176,6 @@ header {
     display: block;
     background: none;
     border: none;
-    color: var(--color-neutra-100);
     font-size: var(--font-lg);
     cursor: pointer;
       /* tamanho do botao */
@@ -265,6 +269,7 @@ button,
   border: none;
   border-radius: 4px;
   cursor: pointer;
+  font-weight: bold;
   font-size: var(--font-md);
   transition: background-color 0.3s;
   text-decoration: none;
@@ -274,6 +279,7 @@ button,
 button:hover,
 .a-botao:hover {
   background-color: var(--color-primaria);
+  color: var(--color-neutra-900);
 }
 
 button:disabled,
@@ -392,7 +398,7 @@ footer {
 }
 
 footer a {
-  color: var(--color-primaria-clara);
+  color: var(--color-destaque);
   text-decoration: none;
 }
 
@@ -462,7 +468,7 @@ footer a:hover {
   top: var(--space-2);
   right: var(--space-2);
   background: var(--color-primaria);
-  color: var(--color-neutra-100);
+  color: var(--color-neutra-900);;
   padding: var(--space-2);
   border-radius: 4px;
   z-index: 2000;
