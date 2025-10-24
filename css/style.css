@@ -223,7 +223,6 @@ section {
 
 section h1,
 section h2 {
-  margin-bottom: var(--space-3);
   font-size: var(--font-xl);
   color: var(--color-primaria);
 }
@@ -354,11 +353,15 @@ ul {
   color: var(--color-neutra-700);
 }
 
-#section-home h3 {
+#section-home h2 {
   color: var(--color-neutra-200);
+  margin: 0;
 }
 
 /* ==================== Projetos e grids ==================== */
+.titulo-pagina {
+  text-align: center;
+}
 
 #section-projetos {
   display: grid;
@@ -372,8 +375,8 @@ ul {
   align-items: center;
 }
 
-/* ================ Footer ==================== */
-#main-cadastro div {
+/* ================ Cadastro ==================== */
+#main-cadastro #div-Img {
   background-image: url(../img/apertoDeMao.png);
   background-repeat: no-repeat;
   background-size: cover;
