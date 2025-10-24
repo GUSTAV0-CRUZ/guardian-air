@@ -1,0 +1,25 @@
+export function spaModule(identificador) {
+    if(!document.querySelector(identificador)) return
+    const elmentoMudar = document.querySelector(identificador);
+    const section = document.createElement('section');
+    const h2 = document.createElement('h2');
+    const paragrafo = document.createElement('p');
+
+    h2.innerText = 'Cadastro Preenchido';
+    paragrafo.innerText = 'O cadastro foi enviado com sucesso.';
+    h2.style.color = 'black';
+    h2.style.backgroundColor = 'var(--color-neutra-200)';
+    paragrafo.style.color = 'black';
+    paragrafo.style.backgroundColor = 'var(--color-neutra-200)';
+    paragrafo.style.padding = '0 1em';
+    h2.style.padding = '0 1em';
+    paragrafo.style.margin = '0';
+    h2.style.margin = '0';
+
+    section.appendChild(h2);
+    section.appendChild(paragrafo);
+
+    elmentoMudar.after(section);
+    elmentoMudar.remove();
+
+}

@@ -1,0 +1,39 @@
+{
+  "projetosVoluntariado": [
+    {
+      "id": 1,
+      "titulo": "Guardiões da Vegetação",
+      "objetivo": "Proteger e monitorar áreas verdes existentes para garantir um ecossistema saudável e preservar a biodiversidade local contra desmatamento e queimadas.",
+      "atividades": ["Mapeamento de áreas", "Trilhas de monitoramento", "Educação ambiental na comunidade"],
+      "status": "Contínuo"
+    },
+    {
+      "id": 2,
+      "titulo": "Viveiro Comunitário",
+      "objetivo": "Construir e manter um espaço dedicado à produção de mudas de plantas nativas, que serão a base para nossos projetos de reflorestamento.",
+      "atividades": ["Coleta de sementes", "Preparo de substrato", "Cuidado e irrigação das mudas"],
+      "status": "Em Planejamento"
+    },
+    {
+      "id": 3,
+      "titulo": "Hortas para Todos",
+      "objetivo": "Criar e cultivar hortas comunitárias para promover a segurança alimentar, o consumo de alimentos orgânicos e fortalecer os laços da comunidade.",
+      "atividades": ["Preparo dos canteiros", "Plantio de hortaliças e temperos", "Manutenção e colheita coletiva"],
+      "status": "Ativo"
+    },
+    {
+      "id": 4,
+      "titulo": "Missão Renascer Verde",
+      "objetivo": "Organizar mutirões para revitalizar áreas degradadas pelo descarte de lixo, transformando-as em locais limpos e prontos para o reflorestamento.",
+      "atividades": ["Remoção de resíduos sólidos", "Limpeza de margens de rios", "Preparo do solo para plantio"],
+      "status": "Recorrente"
+    },
+    {
+      "id": 5,
+      "titulo": "Exploradores do Plantio",
+      "objetivo": "Mapear e catalogar terrenos ociosos em nossa comunidade com potencial para se tornarem futuras áreas de plantio, hortas ou bosques.",
+      "atividades": ["Pesquisa de campo", "Análise de solo simplificada", "Contato com proprietários"],
+      "status": "Recrutando"
+    }
+  ]
+}
