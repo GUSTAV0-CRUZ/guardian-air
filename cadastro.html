@@ -20,7 +20,7 @@ Validação em JS para checar se todos campos foram preenchidos. -->
                     alt="log da ONG, representa uma folha sendo protegida por uma suave brisa, simbolizando a guarda e o cuidado com o ar e a natureza."
                     class="logo">
             </a>
-            <ul class="nav-list">
+            <ul class="nav-list" id="nav-menu">
             <li class="dropdown">
                 <a href="./index.html#section-home">Home</a>
                 <ul>
@@ -37,67 +37,101 @@ Validação em JS para checar se todos campos foram preenchidos. -->
             </li>
             <li><a href="#main-cadastro">Cadastro</a></li>
             </ul>
+            <label class="interruptor-tema" for="modo-noturno-toggle">
+                <input type="checkbox" id="modo-noturno-toggle" aria-label="Ativar modo escuro"/>
+                <span class="deslizante"></span>
+            </label>
         </nav>
     </header>
 
     <main id="main-cadastro">
-        <h1>Se torne mais um guadião do ar</h1>
-        <p>Venha fazer parte de nossa ONG e ajude a melhorar o meio ambiente</p>
-        <div>
+        <div class="titulo-pagina">
+            <h1>Se torne mais um guadião do ar</h1>
+            <p>Venha fazer parte de nossa ONG e ajude a melhorar o meio ambiente</p>
+        </div>
+        <div id="div-Img">
             <section>
                 <h2>Cadastrar</h2>
                 <!-- formulario com mascara de validação e com alguns campos obrigatórios -->
                 <form action="/voluntariado/cadastro" method="post" class="form-voluntariado" id="form-cadastro">
                     <fieldset>
                         <legend><strong>Dados Pessoais</strong></legend>
-                        <label for="nome">Primeiro nome</label>
-                        <input type="text" name="nome" id="nome" required><br>
+                        <div>
+                            <label for="nome">Primeiro nome</label>
+                            <input type="text" name="nome" id="nome" required>
+                        </div>
+                        
+                        <div>
+                            <label for="sobrenome">Sobrenome</label>
+                            <input type="text" name="sobrenome" id="sobrenome" required>
+                        </div>
+                        
+                        <div>
+                            <label for="nascimento">Data de nascimento</label>
+                            <input type="date" name="nascimento" id="nascimento" required>
+                        </div>
+                        
+                        <div>
+                            <label for="cpf">CPF</label>
+                            <input type="text" name="cpf" id="cpf" pattern="[0-9]{3}\.[0-9]{3}\.[0-9]{3}-[0-9]{2}"
+                            placeholder="000.000.000-00" title="Formato: 000.000.000-00" required>
+                        </div>
+                        
+                        <div>
+                            <label for="cep">CEP</label>
+                            <input id="cep" type="text" class="cep" pattern="[0-9]{5}-[0-9]{3}" placeholder="00000-000"
+                            title="Formato: 00000-000" required>
+                        </div>
+                        
+                        <div>
+                            <label for="uf">UF</label>
+                            <input type="text" name="uf" id="uf" required>
+                        </div>
+                        
+                        <div>
+                            <label for="cidade">Cidade</label>
+                            <input type="text" name="cidade" id="cidade" required>
+                        </div>
+                        
+                        <div>
+                            <label for="telefone">Número de telefone</label>
+                            <input type="tel" name="telefone" id="telefone" pattern="\([0-9]{2}\) [0-9]{5}-[0-9]{4}"
+                            placeholder="(00) 00000-0000" title="Formato: (00) 00000-0000" required>
+                        </div>
 
-                        <label for="sobrenome">Sobrenome</label>
-                        <input type="text" name="sobrenome" id="sobrenome" required><br>
-
-                        <label for="nascimento">Data de nascimento</label>
-                        <input type="date" name="nascimento" id="nascimento" required><br>
-
-                        <label for="cpf">CPF</label>
-                        <input type="text" name="cpf" id="cpf" pattern="[0-9]{3}\.[0-9]{3}\.[0-9]{3}-[0-9]{2}"
-                            placeholder="000.000.000-00" title="Formato: 000.000.000-00" required><br>
-
-                        <label for="cep">CEP</label>
-                        <input id="cep" type="text" class="cep" pattern="[0-9]{5}-[0-9]{3}" placeholder="00000-000"
-                            title="Formato: 00000-000" required><br>
-
-                        <label for="uf">UF</label>
-                        <input type="text" name="uf" id="uf" required><br>
-
-                        <label for="cidade">Cidade</label>
-                        <input type="text" name="cidade" id="cidade" required><br>
-
-                        <label for="telefone">Número de telefone</label>
-                        <input type="tel" name="telefone" id="telefone" pattern="\([0-9]{2}\) [0-9]{5}-[0-9]{4}"
-                            placeholder="(00) 00000-0000" title="Formato: (00) 00000-0000" required><br>
-
-                        <label for="email">E-mail para contato</label>
-                        <input type="email" name="e-mail" id="email" required><br>
+                        <div>
+                            <label for="email">E-mail para contato</label>
+                            <input type="email" name="e-mail" id="email" required>
+                        </div>
                     </fieldset>
 
                     <!-- campos não obrigatórios -->
                     <fieldset>
                         <legend><strong>Habilidades</strong></legend>
-                        <label for="comunicacao">Comunicação</label>
-                        <input type="checkbox" name="comunicacao" id="comunicacao"><br>
+                        <div>
+                            <label for="comunicacao">Comunicação</label>
+                            <input type="checkbox" name="comunicacao" id="comunicacao">
+                        </div>
+                        
+                        <div>
+                            <label for="artes">Artes</label>
+                            <input type="checkbox" name="artes" id="artes">
+                        </div>
+                        
+                        <div>
+                            <label for="eventos">Eventos</label>
+                            <input type="checkbox" name="eventos" id="eventos">
+                        </div>
+                        
+                        <div>
+                            <label for="administrativo">Administrativo</label>
+                            <input type="checkbox" name="administrativo" id="administrativo">
+                        </div>
 
-                        <label for="artes">Artes</label>
-                        <input type="checkbox" name="artes" id="artes"><br>
-
-                        <label for="eventos">Eventos</label>
-                        <input type="checkbox" name="eventos" id="eventos"><br>
-
-                        <label for="administrativo">Administrativo</label>
-                        <input type="checkbox" name="administrativo" id="administrativo"><br>
-
-                        <label for="ensino">Ensino</label>
-                        <input type="checkbox" name="ensino" id="ensino"><br>
+                        <div>
+                            <label for="ensino">Ensino</label>
+                            <input type="checkbox" name="ensino" id="ensino">
+                        </div>
                     </fieldset>
 
                     <button type="reset" class="btn-formulario reset">Resetar</button>
