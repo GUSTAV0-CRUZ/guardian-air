@@ -21,7 +21,7 @@ Filtro em JS (ex: botão “mostrar só reflorestamento”).
                     alt="log da ONG, representa uma folha sendo protegida por uma suave brisa, simbolizando a guarda e o cuidado com o ar e a natureza."
                     class="logo">
             </a>
-            <ul class="nav-list" id="nav-menu">
+            <ul class="nav-list">
             <li class="dropdown">
                 <a href="./index.html#section-home">Home</a>
                 <ul>
@@ -38,18 +38,13 @@ Filtro em JS (ex: botão “mostrar só reflorestamento”).
             </li>
             <li><a href="./cadastro.html">Cadastro</a></li>
             </ul>
-            <label class="interruptor-tema" for="modo-noturno-toggle">
-                <input type="checkbox" id="modo-noturno-toggle" aria-label="Ativar modo escuro"/>
-                <span class="deslizante"></span>
-            </label>
         </nav>
     </header>
 
     <main>
-        <h1 class="titulo-pagina">Nossos Projetos e Como Ajudar</h1>
         <section id="section-projetos">
             <div>
-                <h2>Lista de Projetos</h2>
+                <h1>Lista de Projetos</h1>
                 <ul>
                     <li>Presevar áreas de vegetação</li>
                     <li>Criar um viveiro comunitario</li>
@@ -66,7 +61,7 @@ Filtro em JS (ex: botão “mostrar só reflorestamento”).
                         alt="Pessoas sorridente trabalha unida para cuidar de uma área verde, em um cenário natural."
                         loading="lazy">
                 </figure>
-                <button type="button" class="saiba-mais PresevarVegetação" aria-label="Saiba mais sobre Preservar áreas de vegetação">Saiba mais</button>
+                <button type="button" class="saiba-mais PresevarVegetação">Saiba mais</button>
             </article>
 
             <article>
@@ -76,7 +71,7 @@ Filtro em JS (ex: botão “mostrar só reflorestamento”).
                         alt="Diversas pessoas de todas as idades colaboram em um animado viveiro de mudas, plantando e cuidando de plantas em vasos."
                         loading="lazy">
                 </figure>
-                <button type="button" class="saiba-mais viveiroComunitario" aria-label="Saiba mais sobre Criar um viveiro comunitário">Saiba mais</button>
+                <button type="button" class="saiba-mais viveiroComunitario">Saiba mais</button>
             </article>
 
             <article>
@@ -86,7 +81,7 @@ Filtro em JS (ex: botão “mostrar só reflorestamento”).
                         alt="Uma mulher feliz cultiva sua horta pessoal cheia de vegetais e frutas, com uma placa indicando 'CULTIVO PRÓPRIO'"
                         loading="lazy">
                 </figure>
-                <button type="button" class="saiba-mais própioConsumo" aria-label="Saiba mais sobre Plantar para o próprio consumo">Saiba mais</button>
+                <button type="button" class="saiba-mais própioConsumo">Saiba mais</button>
             </article>
 
             <article>
@@ -96,7 +91,7 @@ Filtro em JS (ex: botão “mostrar só reflorestamento”).
                         alt="Um grupo de pessoas, incluindo adultos e crianças, colabora para limpar uma paisagem árida e poluída, com a placa 'ÁREA EM RECUPERAÇÃO'."
                         loading="lazy">
                 </figure>
-                <button type="button" class="saiba-mais LimparAreas" aria-label="Saiba mais sobre Limpar áreas degradadas">Saiba mais</button>
+                <button type="button" class="saiba-mais LimparAreas">Saiba mais</button>
             </article>
 
             <article>
@@ -106,7 +101,7 @@ Filtro em JS (ex: botão “mostrar só reflorestamento”).
                         alt=" Um mapa ilustrado de uma área rural-urbana, indicando com ícones verdes possíveis locais para plantio e cultivo."
                         loading="lazy">
                 </figure>
-                <button type="button" class="saiba-mais mapearPlantios" aria-label="Saiba mais sobre Mapear locais para plantios">Saiba mais</button>
+                <button type="button" class="saiba-mais mapearPlantios">Saiba mais</button>
             </article>
         </section>
 
@@ -141,9 +136,9 @@ Filtro em JS (ex: botão “mostrar só reflorestamento”).
                     <h3 class="h3-doacoes">Doar</h3>
                     <button type="button">R$5</button>
                     <button type="button">R$50</button>
-                    <button type="button">R$100</button>
-                    <label for="valorDoacaoEscolha">Valor atual / alterar valor</label>
-                    <input type="number" name="valorDoacaoEscolha" id="valorDoacaoEscolha">
+                    <button type="button">R$100</button><br>
+                    <label for="valorDoacaoEscolha">Valor atual / alterar valor</label><br>
+                    <input type="number" name="valorDoacaoEscolha" id="valorDoacaoEscolha"><br>
                     <button type="button">Desejo doar esse valor</button>
                     <div class="div-formaDePagamento">
                         <!-- adicionar metodos de pagamento com js -->
