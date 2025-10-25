@@ -109,11 +109,12 @@ export default class Form {
         const getMes = Number(formataStrig.slice(4, 6));
         const getDia = Number(formataStrig.slice(6, 8));
 
-        if(anoAtual - getAno < 18 || getAno < 1885) return false
-        if(mesAtual < getMes) return false
-        if(diaAtual < getDia) return false
+        if(getAno < 1885) return false
+        if(anoAtual - getAno > 18) return true
+        if(anoAtual - getAno === 18 && mesAtual > getMes) return true
+        if(anoAtual - getAno === 18 && mesAtual === getMes && diaAtual >= getDia) return true
 
-        return true
+        return false
     }
 
     camposFormatados() {
