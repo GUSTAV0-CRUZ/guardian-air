@@ -12,7 +12,7 @@ Este projeto foi construído como entrega final, consolidando práticas profissi
 
 Você pode acessar a versão ao vivo do projeto aqui:
 
-**[https://URL-AQUI.com](https://URL-AQUI.com)**
+**[https://https://GUSTAV0-CRUZ.github.io/guardian-air/](https://GUSTAV0-CRUZ.github.io/guardian-air/)**
 
 ---
 
