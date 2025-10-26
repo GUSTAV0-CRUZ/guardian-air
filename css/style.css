@@ -353,6 +353,10 @@ ul {
 }
 
 /* ==================== Projetos e grids ==================== */
+.titulo-pagina {
+  text-align: center;
+  color: var(--color-neutra-900);
+}
 
 #section-projetos {
   display: grid;
