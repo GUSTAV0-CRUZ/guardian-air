@@ -24,7 +24,7 @@ export class SaibaMais {
 
     async formataJson () {
         try {
-            const json = await fetch('../../assets/data/projetos.json');
+            const json = await fetch('./assets/data/projetos.json');
             const jsonFormatado = await json.json()
             jsonFormatado.projetosVoluntariado.forEach(conteudo => {
                 this.conteudos.push(conteudo);
