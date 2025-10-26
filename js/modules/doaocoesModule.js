@@ -31,7 +31,7 @@ const criaPagamento = () => {
     Form.removeElementos('.saibaMaisExibido');
     if(!displayMostraValor.value) return displayMostraValor.after(SaibaMais.criaParagrafo({ msg: 'Adicione um valor', cor: 'red'}))
     const divPagamento = document.querySelector('.div-formaDePagamento');
-    divPagamento.appendChild(criaTagImg({ endereco: '../../img/qrCode.png', largura:'50%', altura:'40%'}));
+    divPagamento.appendChild(criaTagImg({ endereco: './img/qrCode.png', largura:'50%', altura:'40%'}));
 }
 
 const criaTagImg = ({ endereco, largura, altura }) => {
