@@ -108,7 +108,7 @@ header {
 }
 
 .nav-list a {
-  color: var(--color-neutra-900);
+  color: var(--color-neutra-100);
   text-decoration: none;
   font-weight: bold;
   padding: var(--space-1) var(--space-2);
@@ -127,15 +127,10 @@ header {
 
 .nav-list a:hover,
 .nav-list a:focus-visible {
+  background-color: var(--color-destaque);
   color: var(--color-neutra-100);
   /* Mantém a cor do texto */
   outline: none;
-}
-.nav-list li:hover,
-.nav-list li:focus-visible,
-.nav-list li ul li:hover,
-.nav-list li ul li:focus-visible {
-  background-color: var(--color-secundaria);
 }
 
 /* Mostra o botão hambúrguer */
@@ -143,7 +138,7 @@ header {
     display: none;
     background: none;
     border: none;
-    color: var(--color-neutra-900);
+    color: var(--color-neutra-100);
     font-size: var(--font-lg);
     cursor: pointer;
     margin-left: auto;
@@ -162,6 +157,7 @@ header {
     flex-wrap: nowrap;
     align-items: center;
     gap: 0;
+
     padding: 0 var(--space-2);
   }
 
@@ -175,6 +171,7 @@ header {
     display: block;
     background: none;
     border: none;
+    color: var(--color-neutra-100);
     font-size: var(--font-lg);
     cursor: pointer;
       /* tamanho do botao */
@@ -222,6 +219,7 @@ section {
 
 section h1,
 section h2 {
+  margin-bottom: var(--space-3);
   font-size: var(--font-xl);
   color: var(--color-primaria);
 }
@@ -267,7 +265,6 @@ button,
   border: none;
   border-radius: 4px;
   cursor: pointer;
-  font-weight: bold;
   font-size: var(--font-md);
   transition: background-color 0.3s;
   text-decoration: none;
@@ -277,7 +274,6 @@ button,
 button:hover,
 .a-botao:hover {
   background-color: var(--color-primaria);
-  color: var(--color-neutra-900);
 }
 
 button:disabled,
@@ -352,9 +348,8 @@ ul {
   color: var(--color-neutra-700);
 }
 
-#section-home h2 {
+#section-home h3 {
   color: var(--color-neutra-200);
-  margin: 0;
 }
 
 /* ==================== Projetos e grids ==================== */
@@ -375,13 +370,12 @@ ul {
   align-items: center;
 }
 
-/* ================ Cadastro ==================== */
-#main-cadastro #div-Img {
+/* ================ Footer ==================== */
+#main-cadastro div {
   background-image: url(../img/apertoDeMao.png);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
-  border-radius: 20%;
 }
 
 #main-cadastro form {
@@ -402,7 +396,7 @@ footer {
 }
 
 footer a {
-  color: var(--color-destaque);
+  color: var(--color-primaria-clara);
   text-decoration: none;
 }
 
@@ -472,7 +466,7 @@ footer a:hover {
   top: var(--space-2);
   right: var(--space-2);
   background: var(--color-primaria);
-  color: var(--color-neutra-900);;
+  color: var(--color-neutra-100);
   padding: var(--space-2);
   border-radius: 4px;
   z-index: 2000;
@@ -519,84 +513,4 @@ footer a:hover {
   font-size: var(--font-xs);
   font-weight: bold;
   text-transform: uppercase;
-}
-
-/* Interruptor de Tema (Modo Escuro) */
-.interruptor-tema {
-  position: relative;
-  display: inline-block;
-  width: 54px;
-  height: 30px;
-  margin-left: var(--space-1);
-  vertical-align: middle; 
-}
-
-.interruptor-tema input {
-  opacity: 0;
-  width: 0;
-  height: 0;
-}
-
-.deslizante {
-  position: absolute;
-  cursor: pointer;
-  inset: 0; 
-  background-color: var(--color-neutra-900);
-  transition: .4s;
-  border-radius: 30px;
-}
-
-.deslizante:before {
-  position: absolute;
-  content: "🌙"; /* Lua */
-  height: 22px;
-  width: 22px;
-  left: 4px;
-  bottom: 4px;
-  background-color: white;
-  transition: .4s;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 14px;
-}
-
-input:checked + .deslizante {
-  background-color: #f1c40f;
-}
-
-input:checked + .deslizante:before {
-  content: "☀️";
-  transform: translateX(24px);
-}
-
-.interruptor-tema input:focus-visible + .deslizante {
-  box-shadow: 0 0 0 3px var(--color-primaria-clara);
-}
-
-body.modo-noturno {
-  /* Cores escuras */
-  --color-neutra-100: #121212;
-  --color-neutra-200: #212121;
-  --color-neutra-300: #333333;
-  
-  /* Cores claras para texto */
-  --color-neutra-900: #f5f5f5;
-  --color-neutra-700: #e0e0e0;
-  
-}
-
-body.modo-noturno #section-home {
-  --color-neutra-700: #424242; 
-  --color-neutra-200: #f5f5f5;
-}
-
-body.modo-noturno footer {
-  background-color: var(--color-neutra-200);
-  color: var(--color-neutra-700);
-}
-
-body.modo-noturno footer a {
-  color: var(--color-destaque);
 }

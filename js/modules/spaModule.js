@@ -7,9 +7,9 @@ export function spaModule(identificador) {
 
     h2.innerText = 'Cadastro Preenchido';
     paragrafo.innerText = 'O cadastro foi enviado com sucesso.';
-    h2.style.color = 'var(--color-neutra-900)';
+    h2.style.color = 'black';
     h2.style.backgroundColor = 'var(--color-neutra-200)';
-    paragrafo.style.color = 'var(--color-neutra-900)';
+    paragrafo.style.color = 'black';
     paragrafo.style.backgroundColor = 'var(--color-neutra-200)';
     paragrafo.style.padding = '0 1em';
     h2.style.padding = '0 1em';
